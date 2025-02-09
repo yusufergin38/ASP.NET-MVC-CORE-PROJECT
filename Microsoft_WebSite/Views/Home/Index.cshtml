@@ -1,0 +1,72 @@
+@using System.Drawing
+@using Microsoft_WebSite.DataAccess.Entities
+@model MicrosoftWebSite.Business.Dtos.HomeDto
+@{
+  string proPlanDesign = "card mb-4 rounded-3 shadow-sm border-primary";
+  string freePlanDesign = "card mb-4 rounded-3 shadow-sm";
+  
+  @functions{
+
+    public double PriceSum(List<PackageProductUnit> productUnits)
+    {
+      var initialPrice = 0;
+      foreach (var item in productUnits)
+      {
+        initialPrice += Convert.ToInt32(item.PackageProductUnitPrice);
+      }
+
+      return initialPrice+initialPrice*0.18;
+    }
+
+  }
+  }
+<!--HERO-START-->
+
+  <div id="hero">
+    @await Html.PartialAsync("_Hero")
+  </div>
+
+<!--HERO-END-->
+<!--Features START-->
+@await Html.PartialAsync("_Features")
+<!--Features END-->
+    <!--ABOUT-US-START-->
+    @await Html.PartialAsync("_AboutUs",Model.aboutUs)
+    
+    <!--ABOUT-US-END-->
+     <!--SERVİCES-START-->
+    @await Component.InvokeAsync("Service")
+    <!--SERVİCES-END-->
+    <!--PRICING-START-->
+    <div class="container py-3" id="pricing">
+        <main>
+          <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            @foreach (var packageItem in Model.Package)
+            {
+              <div class="col">
+                <div class="@(packageItem.PackageTitle == "Enterprise" ? proPlanDesign : freePlanDesign)" >
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">@packageItem.PackageTitle</h4>
+                   
+                  </div>
+                  <div class="card-body">
+                    
+                    <h1 class="card-title pricing-card-title">$@PriceSum(packageItem.PackageProductUnits)<small class="text-body-secondary fw-light">/mo</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      @foreach (var packageProductUnitItem in packageItem.PackageProductUnits)
+                      {
+                        <li>@packageProductUnitItem.PackageProductUnitContent</li>
+                      }
+
+                    </ul>
+                    <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+                  </div>
+                </div>
+              </div>
+            }
+           
+          </div>
+        </main>
+   
+      </div>
+    <!--PRICING-END-->

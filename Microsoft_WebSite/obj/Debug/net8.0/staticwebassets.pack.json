@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Win10\\Documents\\GitHub\\GİTHUB-YENİ\\Full_Stack_Edu_21.09\\26_Asp.Net.Mvc.Core\\Microsoft_WebSite\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Microsoft_WebSite.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Microsoft_WebSite.bundle.scp.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Microsoft_WebSite.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Microsoft_WebSite.props",
+      "PackagePath": "build\\Microsoft_WebSite.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Microsoft_WebSite.props",
+      "PackagePath": "buildMultiTargeting\\Microsoft_WebSite.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Microsoft_WebSite.props",
+      "PackagePath": "buildTransitive\\Microsoft_WebSite.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
